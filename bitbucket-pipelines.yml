@@ -1,0 +1,19 @@
+image: aphatangade/qiac_docker_poc
+
+pipelines:
+  custom: # defines that this can only be triggered manually or by a schedule
+    qualys: # The name that is displayed in the list in the Bitbucket Cloud GUI
+      - step:
+          script:
+            - export ScheduleBuildTrigger=true
+            - sh /bitbucket.sh $ScheduleBuildTrigger
+  default:
+    - step:
+        name: Qualys
+        caches:
+          - pip
+        script:
+          - export ScheduleBuildTrigger=false
+          - sh /bitbucket.sh $ScheduleBuildTrigger 
+          
+
