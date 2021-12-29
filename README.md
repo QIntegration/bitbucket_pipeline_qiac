@@ -21,7 +21,7 @@ Refer to [repository variables](https://support.atlassian.com/bitbucket-cloud/do
 ## Qualys IaC Bitbucket pipeline script
 
 ```
-image: qualys/qualys_qiac
+image: qualys/qiac_security_cli
 
 pipelines:
   custom: 
@@ -41,6 +41,6 @@ pipelines:
 
 ```
 
-* We pull Qualys qiac docker image for executing qiac commands.
+* The pipeline script runs on Qualys qiac docker image from docker hub.
 * In the above script custom Qualys section will be triggered only manually or by a scheduled event. And for all other events default section will execute.
-* Seating ScheduleBuildTrigger variable to tell which event is executed in the bitbucket script.
+* Configure ScheduleBuildTrigger to true if you want the pipeline script to trigger as per your schedule.
