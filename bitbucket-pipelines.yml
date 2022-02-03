@@ -1,4 +1,4 @@
-image: aphatangade/qiac_docker_poc
+image: qualys/qiac_security_cli
 
 pipelines:
   custom: # defines that this can only be triggered manually or by a schedule
