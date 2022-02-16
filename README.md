@@ -29,7 +29,7 @@ pipelines:
       - step:
           script:
             - export ScheduleBuildTrigger=true
-            - sh /bitbucket.sh $ScheduleBuildTrigger
+            - sh /home/qiac/bitbucket.sh $ScheduleBuildTrigger
   default:
     - step:
         name: Qualys
@@ -37,7 +37,7 @@ pipelines:
           - pip
         script:
           - export ScheduleBuildTrigger=false
-          - sh /bitbucket.sh $ScheduleBuildTrigger 
+          - sh /home/qiac/bitbucket.sh $ScheduleBuildTrigger 
 
 ```
 
